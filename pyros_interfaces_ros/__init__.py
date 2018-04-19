@@ -22,7 +22,6 @@ _logger.addHandler(logging.NullHandler())
 # Doing this first, since it should not rely on  ROS setup at all
 # early except to prevent unintentional workaround in all modules here for pyros packages we depend on
 import sys
-print (sys.path)
 import pyros_interfaces_common
 # We ideally should add all dependencies imported by the modules in this subpackage...
 # We should be fine here when running from deb.
@@ -46,6 +45,9 @@ except ImportError:
     from .api import rospy_safe
     # TODO : moving pyros_setup from here, to api package, would make testing (from python) a bit simpler.
 
+# exposing version number
+from ._version import __version__, __version_info__
+
 from .service_if import ServiceBack
 from .param_if import ParamBack
 from .param_if_pool import RosParamIfPool
@@ -54,6 +56,7 @@ from .subscriber_if_pool import RosSubscriberIfPool
 from .publisher_if_pool import RosPublisherIfPool
 from .baseinterface import BaseInterface
 from .ros_interface import RosInterface
+from .pyros_ros import PyrosROS
 
 
 __all__ = [
@@ -61,4 +64,5 @@ __all__ = [
     'ServiceBack',
     'ParamBack',
     'RosInterface',
+    'PyrosROS',
 ]
