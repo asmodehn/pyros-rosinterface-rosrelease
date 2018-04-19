@@ -2,12 +2,16 @@ from __future__ import absolute_import
 
 import logging
 import unicodedata
+import yaml
 
 import six
 from pyros_interfaces_common.basenode import PyrosBase
 from pyros_interfaces_common.utils import deprecated
 
 from . import config
+
+_logger = logging.getLogger(__name__)
+_logger.addHandler(logging.NullHandler())
 
 
 class PyrosROS(PyrosBase):
@@ -59,8 +63,10 @@ class PyrosROS(PyrosBase):
             default_config=self._default_config)  # we pass our specific default config
 
         # overriding default config with file provided
+        _logger.info("Loading default configuration from {0} \n{1}".format(config.__file__, yaml.dump(config)))
         self.config_handler.configure(config)  # configuring with our package default (user can statically define this)
         if pyros_config:
+            _logger.info("Loading overlayed configuration \n{0}".format(yaml.dump(config)))
             self.config_handler.configure(pyros_config)  # configuring with argument passed from user
 
 
@@ -175,6 +181,7 @@ class PyrosROS(PyrosBase):
     def run(self, *args, **kwargs):
         """
         Running in a zmp.Node process, providing zmp.services
+        If you are calling this function directly, do not forget to pass in the configuration...
         """
 
         # TODO : install shutdown hook to shutdown if detected
