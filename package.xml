@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>pyros_interfaces_ros</name>
-  <version>0.4.1</version>
+  <version>0.4.2</version>
   <description>
     Dynamic ROS interface for Pyros
   </description>
@@ -35,6 +35,7 @@
   <test_depend version_gte="1.11.19">rostest</test_depend>
   <test_depend version_gte="1.11.12">rosunit</test_depend>
   <test_depend version_gte="1.11.19">rostopic</test_depend>
+  <test_depend version_gte="1.11.19">rosservice</test_depend>
 
   <!-- documentation dependencies -->
   <doc_depend version_gte="0.2.10">python-catkin-pkg</doc_depend>
