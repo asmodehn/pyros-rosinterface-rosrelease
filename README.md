@@ -1,3 +1,26 @@
+## pyros_interfaces_ros (kinetic) - 0.4.2-0
+
+The packages in the `pyros_interfaces_ros` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic pyros_interfaces_ros` on `Sat, 21 Apr 2018 12:31:35 -0000`
+
+The `pyros_interfaces_ros` package was released.
+
+Version of package(s) in repository `pyros_interfaces_ros`:
+
+- upstream repository: https://github.com/asmodehn/pyros-rosinterface.git
+- release repository: https://github.com/asmodehn/pyros-rosinterface-rosrelease.git
+- rosdistro version: `0.4.1-0`
+- old version: `0.4.1-0`
+- new version: `0.4.2-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.4`
+- catkin_pkg version: `0.4.1`
+- rosdep version: `0.12.2`
+- rosdistro version: `0.6.8`
+- vcstools version: `0.1.40`
+
+
 ## pyros_interfaces_ros (kinetic) - 0.4.1-0
 
 The packages in the `pyros_interfaces_ros` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic pyros_interfaces_ros` on `Thu, 19 Apr 2018 13:55:18 -0000`
